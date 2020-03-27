@@ -16,6 +16,9 @@ steps:
 - script: sudo dpkg -i hugo.deb
   displayName: 'Install Hugo'
 
+- script: hugo
+  displayName: 'Build Hugo site'
+
 - script: |
     echo Add other tasks to build, test, and deploy your project.
     echo See https://aka.ms/yaml
