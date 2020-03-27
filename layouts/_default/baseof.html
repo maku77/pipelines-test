@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+{{ with .Site.LanguageCode }}<html lang="{{ . }}">{{ else }}<html>{{ end }}
+<head>
+  {{ partial "head/all" . }}
+</head>
+<body>
+
+<div id="xRoot">
+  <div id="xSiteHeader"><a href="{{ "/" | relURL }}">{{ .Site.Title }}</a></div>
+
+  <div id="xContainer">
+    <main id="xMain">
+      {{- block "article" . }} article ブロックが見つかりません。 {{- end }}
+    </main>
+  </div>
+
+  <div id="xSiteFooter"><a href="{{ "/" | relURL }}">{{ .Site.Title }}</a></div>
+</div>
+
+</body>
+</html>
