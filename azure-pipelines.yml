@@ -10,11 +10,11 @@ pool:
   vmImage: 'ubuntu-latest'
 
 steps:
-- script: wget https://github.com/gohugoio/hugo/releases/download/v0.68.3/hugo_0.68.3_Linux-64bit.deb -O hugo.deb
+- script: wget -o hugo.deb https://github.com/gohugoio/hugo/releases/download/v0.68.3/hugo_extended_0.68.3_Linux-64bit.deb
   displayName: 'Download Hugo'
 
-- script: echo Hello, world!
-  displayName: 'Run a one-line script'
+- script: sudo dpkg -i hugo.deb
+  displayName: 'Install Hugo'
 
 - script: |
     echo Add other tasks to build, test, and deploy your project.
