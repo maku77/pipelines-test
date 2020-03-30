@@ -19,7 +19,7 @@ steps:
 - script: hugo
   displayName: 'Build Hugo site'
 
-- publish: $(System.DefaultWorkingDirectory)/publish
+- publish: $(System.DefaultWorkingDirectory)/public
   artifact: WebApp
   displayName: 'Artifact Hugo site'
 
