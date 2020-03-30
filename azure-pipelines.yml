@@ -15,11 +15,11 @@ steps:
 - script: sudo dpkg -i hugo.deb
   displayName: 'Install Hugo $(hugo_version)'
 
-- script: cd $(root_dir) && hugo
+- script: hugo
   displayName: 'Build Hugo site'
   workingDirectory: $(root_dir)
 
-- script: cd $(root_dir) && hugo deploy
+- script: hugo deploy
   displayName: 'Deploy Hugo site'
   workingDirectory: $(root_dir)
   env:
