@@ -21,6 +21,3 @@ steps:
 
 - script: hugo deploy
   displayName: 'Deploy Hugo site'
-  env:
-    AZURE_STORAGE_ACCOUNT: $(AZURE_STORAGE_ACCOUNT)
-    AZURE_STORAGE_KEY: $(AZURE_STORAGE_KEY)
