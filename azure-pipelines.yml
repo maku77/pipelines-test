@@ -19,9 +19,8 @@ steps:
 - script: hugo
   displayName: 'Build Hugo site'
 
-- publish: $(System.DefaultWorkingDirectory)/public
-  artifact: WebApp
-  displayName: 'Artifact Hugo site'
-
 - script: hugo deploy
   displayName: 'Deploy Hugo site'
+  env:
+    AZURE_STORAGE_ACCOUNT: $(AZURE_STORAGE_ACCOUNT)
+    AZURE_STORAGE_KEY: $(AZURE_STORAGE_KEY)
