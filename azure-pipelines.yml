@@ -23,7 +23,5 @@ steps:
   artifact: WebApp
   displayName: 'Artifact Hugo site'
 
-- script: |
-    echo Add other tasks to build, test, and deploy your project.
-    echo See https://aka.ms/yaml
-  displayName: 'Run a multi-line script'
+- script: hugo deploy
+  displayName: 'Deploy Hugo site'
