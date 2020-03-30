@@ -17,9 +17,11 @@ steps:
 
 - script: cd $(root_dir) && hugo
   displayName: 'Build Hugo site'
+  workingDirectory: $(root_dir)
 
 - script: cd $(root_dir) && hugo deploy
   displayName: 'Deploy Hugo site'
+  workingDirectory: $(root_dir)
   env:
     AZURE_STORAGE_ACCOUNT: $(AZURE_STORAGE_ACCOUNT)
     AZURE_STORAGE_KEY: $(AZURE_STORAGE_KEY)
