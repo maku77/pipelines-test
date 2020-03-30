@@ -2,13 +2,13 @@ trigger:
 - master
 
 variables:
-  hugo_version: v0.68.3
+  hugo_version: 0.68.3
 
 pool:
   vmImage: 'ubuntu-latest'
 
 steps:
-- script: wget -O hugo.deb https://github.com/gohugoio/hugo/releases/download/$(hugo_version)/hugo_extended_$(hugo_version)_Linux-64bit.deb
+- script: wget -O hugo.deb https://github.com/gohugoio/hugo/releases/download/v$(hugo_version)/hugo_extended_$(hugo_version)_Linux-64bit.deb
   displayName: 'Download Hugo $(hugo_version)'
 
 - script: sudo dpkg -i hugo.deb
