@@ -2,17 +2,17 @@ trigger:
 - master
 
 variables:
-  hugo.version: v0.68.3
+  hugo_version: v0.68.3
 
 pool:
   vmImage: 'ubuntu-latest'
 
 steps:
-- script: wget -O hugo.deb https://github.com/gohugoio/hugo/releases/download/${{ variables.hugo.version }}/hugo_extended_${{ variables.hugo.version }}_Linux-64bit.deb
-  displayName: 'Download Hugo ${{ variables.hugo.version }}'
+- script: wget -O hugo.deb https://github.com/gohugoio/hugo/releases/download/$(hugo_version)/hugo_extended_$(hugo_version)_Linux-64bit.deb
+  displayName: 'Download Hugo $(hugo_version)'
 
 - script: sudo dpkg -i hugo.deb
-  displayName: 'Install Hugo ${{ variables.hugo.version }}'
+  displayName: 'Install Hugo $(hugo_version)'
 
 - script: hugo
   displayName: 'Build Hugo site'
