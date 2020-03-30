@@ -2,7 +2,8 @@ trigger:
 - master
 
 variables:
-  hugo_version: 0.68.3
+  hugo_version: '0.68.3'
+  root_dir: 'website'
 
 pool:
   vmImage: 'ubuntu-latest'
@@ -14,10 +15,10 @@ steps:
 - script: sudo dpkg -i hugo.deb
   displayName: 'Install Hugo $(hugo_version)'
 
-- script: hugo
+- script: cd $(root_dir) && hugo
   displayName: 'Build Hugo site'
 
-- script: hugo deploy
+- script: cd $(root_dir) && hugo deploy
   displayName: 'Deploy Hugo site'
   env:
     AZURE_STORAGE_ACCOUNT: $(AZURE_STORAGE_ACCOUNT)
